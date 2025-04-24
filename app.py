@@ -102,7 +102,7 @@ def calculate_design_values(aop_reactor_unit_cost, pump_unit_cost, filter_unit_c
     
     # Recirculation pump calculations
     # Rate of recirculation = # of AOP reactors × volume of reactors × 5 / 2 hrs
-    recirculation_flow_rate = total_reactors * reactor_size * 5 / 2  # m³/hour
+    recirculation_flow_rate = total_reactors * reactor_size * 4 / 2  # m³/hour
     recirculation_pumps_required = 2  # 1 running, 1 standby
     
     # CAPEX calculations
@@ -755,7 +755,6 @@ with tab6:
                 "Pump Flow Rate (per train)",
                 "Total Influent/Effluent Pump Capacity",
                 "Recirculation Flow Rate",
-                "Recirculation Rate Formula"
             ],
             "Value": [
                 f"{design_values['num_reactor_trains'] * 2} (1 running, 1 standby per train)",
@@ -765,7 +764,6 @@ with tab6:
                 f"{design_values['pump_flow_rate_per_train']:.2f} m³/hour",
                 f"{design_values['total_pump_flow_rate']:.2f} m³/hour",
                 f"{design_values['recirculation_flow_rate']:.2f} m³/hour",
-                "# of AOP reactors × volume of reactors × 5 / 2 hrs"
             ]
         }
         
